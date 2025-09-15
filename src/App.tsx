@@ -30,6 +30,85 @@ function CanMdfDecodeSection() {
         <h3 className="interface-title">API</h3>
         <a href="https://google.com">문서(Swagger) 링크</a>
       </div>
+
+      <div className="interface-section">
+        <h3 className="interface-title">Test UI</h3>
+        <div className="test-ui-grid">
+          {/* Step 1 - MDF File Selection */}
+          <div className="test-column">
+            <div className="step-header">
+              <div className="step-label">Step 1</div>
+              <p className="step-description">변환하고자 하는 MDF 파일을 선택하세요.</p>
+            </div>
+            <div className="button-n-files">
+              <button className="test-button active"> MDF 파일 선택</button>
+              <div className="file-input-container">
+                <div className="file-item">
+                  <span className="file-name">testfile.mdf</span>
+                  <button className="file-remove">×</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Step 2 - DBC File Selection */}
+          <div className="test-column">
+            <div className="step-header">
+              <div className="step-label">Step 2</div>
+              <p className="step-description">신호 해석에 사용할 DBC 파일들을 선택하세요.</p>
+            </div>
+            <button className="test-button inactive">DBC 파일 선택</button>
+            <div className="checkbox-container">
+              <label className="checkbox-label">
+                <input type="checkbox" className="checkbox" checked disabled />
+                VDMS
+              </label>
+            </div>
+            <div className="file-input-container">
+              <div className="file-item">
+                  <span className="file-name">testfile1.dbc</span>
+                <div className="file-controls">
+                  <select className="file-dropdown">
+                    <option value="미적용">미적용</option>
+                    <option value="전 채널">전 채널</option>
+                    <option value="채널1(P1)">채널1(P1)</option>
+                  </select>
+                  <button className="file-remove">×</button>
+                </div>
+              </div>
+              <div className="file-item">
+                  <span className="file-name">testfile2.dbc</span>
+                <div className="file-controls">
+                  <select className="file-dropdown">
+                    <option value="미적용">미적용</option>
+                    <option value="전 채널">전 채널</option>
+                    <option value="채널1(P1)">채널1(P1)</option>
+                  </select>
+                  <button className="file-remove">×</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Step 3 - Process */}
+          <div className="test-column">
+            <div className="step-header">
+              <div className="step-label">Step 3</div>
+              <p className="step-description">선택한 파일들을 서버로 전송하여 변환을 시작합니다.</p>
+            </div>
+            <button className="test-button inactive">업로드 및 변환</button>
+          </div>
+
+          {/* Step 4 - Download */}
+          <div className="test-column">
+            <div className="step-header">
+              <div className="step-label">Step 4</div>
+              <p className="step-description">변환 완료된 MDF 파일을 다운로드하세요.</p>
+            </div>
+            <button className="test-button inactive">MDF 파일 다운로드</button>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

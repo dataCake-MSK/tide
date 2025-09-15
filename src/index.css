@@ -1,4 +1,5 @@
 /* index.css는 전역 스타일 위함 */
+/* TODO: 재사용성 및 일관된 스타일 위한 개선: h1(TIDE), h2(CAN MDF Decode), h3(API), p, strong(변환), small(Tools for...) */
 
 :root {  /* 최상위 부모 태그, 가상 클래스 앞에 : 붙임, html 태그로 resolve됨 */
   /* 재사용 가능한 색상 변수 */
@@ -49,7 +50,7 @@ body {
 
 .title-section {
   display: flex;
-  align-items: center;  /* 꼬치 끼우듯 elem.들 main-axis 중간에 배치 */
+  align-items: flex-end; 
   gap: 12px;
   /* flex-direction 기본값: row(좌->우) */
 }
@@ -59,12 +60,14 @@ body {
   font-weight: bold;
   color: var(--green-accent);
   margin: 0;
+  line-height: 1; /* Remove default line-height that affects alignment */
+  display: block; /* Ensure it participates in flex layout properly */
 }
 
 .title-icon {
   width: 48px;
   height: 48px;
-  background-color: var(--blue-accent);
+  background-color: transparent;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -72,13 +75,16 @@ body {
   color: white;
   font-size: 1.5rem;
   font-weight: bold;
+  transform: translateY(5px); /* Y축으로 5px 아래로 이동 */
 }
 
 .subtitle {
   font-size: 1rem;
-  color: var(--light-text);
+  font-style: italic;
+  color: var(--green-accent);
   opacity: 0.8;
   margin: 0;
+  transform: translateY(4px); /* Y축으로 5px 아래로 이동 */
 }
 
 .menu-list {
@@ -99,4 +105,54 @@ body {
 .menu-item:hover {
   opacity: 1;
   color: var(--green-accent);
+}
+
+/* CAN MDF Decode Section Styles */
+.app-section {
+  border: 0.5px solid var(--light-border);
+  background-color: var(--dark-gray-bg);
+  border-radius: var(--border-radius);
+  padding: var(--container-padding);
+  margin-bottom: 20px;
+}
+
+.app-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--green-accent);
+  margin-bottom: 16px;
+}
+
+.app-description {
+  font-size: 1rem;
+  color: var(--light-text);
+  opacity: 0.9;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.interface-section {
+  background-color: #2a2a2a;
+  border: 1px solid #404040;
+  border-radius: var(--border-radius);
+  padding: 16px;
+}
+
+.interface-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--light-text);
+  margin-bottom: 12px;
+}
+
+a {
+  color: var(--blue-accent);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
 }

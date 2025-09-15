@@ -1,0 +1,102 @@
+/* index.css는 전역 스타일 위함 */
+
+:root {  /* 최상위 부모 태그, 가상 클래스 앞에 : 붙임, html 태그로 resolve됨 */
+  /* 재사용 가능한 색상 변수 */
+  --dark-gray-bg: #1F1F1F;
+  --light-text: #ffffff;
+  --light-border: #A4A4A2;
+  --green-accent: #00cc22;
+  --blue-accent: #4da6ff;
+  
+  /* 재사용 가능한 크기 변수 */
+  --border-radius: 4px;
+  --container-padding: 24px;
+}
+
+* { 
+  /* 브라우저 기본 스타일 리셋 */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* 좌측부터 우선적으로 폰트 찾아 적용 시도, 공백 존재 시 따옴표 */
+  background-color: #181818;
+  color: var(--light-text);
+  line-height: 1.6;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;  /* shorthand syntax: 위아래 마진 0, 좌우 auto */
+  padding: 20px;
+}
+
+.header-banner {
+  border: 0.5px solid var(--light-border);  
+  background-color: var(--dark-gray-bg);
+  border-radius: var(--border-radius);
+  padding: var(--container-padding);  /* 개발자 도구 초록생은 padding(내용과 border 간격) */
+  margin-bottom: 20px;  /* 개발자 도구 주황색은 margin(elem. 간 간격) */
+}
+
+.header-content {
+  display: flex;  /* flex container 정의, 개발자 도구 보라색이 관련 영역 */
+  flex-direction: column;
+  gap: 12px;
+}
+
+.title-section {
+  display: flex;
+  align-items: center;  /* 꼬치 끼우듯 elem.들 main-axis 중간에 배치 */
+  gap: 12px;
+  /* flex-direction 기본값: row(좌->우) */
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--green-accent);
+  margin: 0;
+}
+
+.title-icon {
+  width: 48px;
+  height: 48px;
+  background-color: var(--blue-accent);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--light-text);
+  opacity: 0.8;
+  margin: 0;
+}
+
+.menu-list {
+  display: flex;
+  gap: 32px;
+  margin-top: 8px;
+}
+
+.menu-item {
+  color: var(--light-text);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.menu-item:hover {
+  opacity: 1;
+  color: var(--green-accent);
+}
